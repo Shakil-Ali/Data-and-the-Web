@@ -1,0 +1,23 @@
+<!-- STADIUM HTML PAGE WHICH MAKES USE OF JINJA TEMPLATE -->
+
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<form action"" method="POST">
+	<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+	<div class="form-group">
+		<label>Locate</label>
+		<input type="text" placeholder="Search a football club e.g. Chelsea FC" name="location" class="form-control" value="{{ request.form.location }}">
+	</div>
+	<button type="submit" class="btn btn-primary btn-lg homeButtons">Locate</button>
+</form>
+	 
+
+{% if name %}
+<div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Stadium{{ name }}+(Stadium)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/map-my-route/">Map a route</a></iframe></div><br />
+{% endif %}
+
+{% endblock  %}
+

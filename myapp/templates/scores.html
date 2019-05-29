@@ -1,0 +1,16 @@
+<!-- SCORES HTML PAGE WHICH USES JINJA TEMPLATES -->
+
+{% extends 'layout.html' %}
+
+{% block body %}
+        <h1>Fixtures</h1>
+        <p>Get the latest scores and fixtures here!</p>
+	
+	<div class="container text-center">
+	<iframe src="http://www.tablesleague.com/iframe?width=520&height=430&font_name=Verdana&position=1&font_size=15&team_link=1&link_color=404040&games=1&wins=1&draws=1&lost=1&goals=1&goals_against=1&gd=1&points=1&next=1&form=1&font_size=15&font_color=000000&bg_color=ffffff&header_font_color=FFFFFF&header_bg_color=ffffff&bg_col=1fb9e4&font_color_col=FFFFFF&highlight=e3e3e3&hover=0e3aea&league_header=1&league=l_145&team=26236&timezone=0&language=2&team_flags=0" width="600" height=430 frameborder="0" scrolling="yes"></iframe>
+	</div>
+	<br />
+
+	
+{% endblock %}
+

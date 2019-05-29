@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-md mb-4">
+
+	<a class="navbar-brand" href="/"><img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c4e1.png" width="30" height="30" alt="chelsea logo"></a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+  	</button>
+
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item active">
+        		<a class="nav-link" href="/"><i class="fa fa-home"></i> Home<span class="sr-only">(current)</span></a>
+      			</li>
+     			<li class="nav-item active">
+        		<a class="nav-link" href="/about"><i class="fa fa-info"></i> About Us</a>
+      			</li>
+      			<li class="nav-item active">
+        		<a class="nav-link" href="/articles"><i class="fa fa-pencil"></i> Forum</a>
+      			</li>
+			<li class="nav-item active">
+                        <a class="nav-link" href="/scores"><i class="fa fa-soccer-ball-o"></i> Fixtures</a>
+                        </li>
+			<li class="nav-item active">
+                        <a class="nav-link" href="/stadium"><i class="fa fa-map-marker"></i> Stadiums</a>
+                        </li>
+			<li class="nav-item active">
+			<a class="nav-link" href="/api"><i class ="fa fa-gear"></i> API</a>
+			</li>
+    		</ul>
+
+		 <ul class="nav navbar-nav navbar-right">
+                        {% if session.logged_in %}
+				<li class="nav-item active">
+	                        <a class="nav-link" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                        	</li>
+				<li class="nav-item active">
+                                <a class="nav-link" href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a>
+                                </li>
+			{% else %}
+				<li class="nav-item active">
+                        	<a class="nav-link" href="/register"><span class="glyphicon glyphicon-user"></span><i class="fa fa-address-book-o"></i> Register</a>
+                        	</li>
+				<li class="nav-item active">
+                        	<a class="nav-link" href="/login"><span class="glyphicon glyphicon-log-in"><i class="fa fa-sign-in"></i> Login</a>
+                        	</li>
+			{% endif %}
+                </ul>
+  	</div>
+
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+
+
+

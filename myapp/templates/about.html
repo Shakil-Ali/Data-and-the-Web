@@ -1,0 +1,91 @@
+<!-- About Us HTML Page, which makes use of jinja templates  -->
+
+{% extends 'layout.html' %}
+
+{% block body %}
+
+	<h1>About Us</h1>
+	<p>This section has been used as a read me file. An explanation on all files used within this flask app project will follow. This app has been created and adapted through a combination of lab-exercises provided by the University, YouTube video: https://www.youtube.com/watch?v=zRwy8gtgJ1A (parts 1 to 5) and the flask documentation. (http://flask.pocoo.org/docs/1.0/)</p>
+
+	<br>
+	<br>
+
+	<h2>Python Files</h2>
+	<p>In this section I will explain what my python files contain and what functionality they have. I have two python files in total.</p>
+
+	<h3>App.py</h3>
+	<p>App.py is my main python file, and I run when I want to run my application from the server. It contains the majority of the python code I used to run my flask application. It begins with imports of various modules which will be essential for running certain functions in the app. It then has initialisation of ‘app’ and MySQL databases initialisations. App.py contains all the app routes of the web application. It ends with a debugger. This allows us to see the errors on the browser.</p>
+	<h3>Classes.py</h3>
+        <p>Classes.py contains all the classes I have created for the app.py file and its functions. I have in app.py imported the classes.py file. This is in order to maintain SoC (separation of concerns). Classes allow us to modularise code and this is what I have done. Class Register Form (for registering a user) and class ArticleForm (for creating an article on the article page).</p>
+
+	<br>
+	<br>
+
+	<h2>HTML Files (within templates)</h2>
+	<p>In this section I will discuss my main html files. They are contained in the folder ‘templates’. I have more html files, but for more specific parts of the application. They will be discussed in a later section.</p>
+
+	<h3>About.html</h3>
+	<p>About.html is the file you are currently viewing this page on. It makes use of jinja templates. All of my html files extend layout.html (which is my base layer html). The about page contains other general tags e.g. h1, h2, p etc.</p>
+
+	<h3>Add_article.html</h3>
+	<p>Add_article.html extends layout.html. It too utilises jinja templates. Within this html file I have got form tags, which perform the POST method. It takes in the title entered by the user and the body of text and submit this, via the input tag.</p>
+
+	<h3>Article.html</h3>
+        <p>Article.html extends layout.html. I have used it to display the articles on my dynamic flask application. It is one of the direct app routes (html pages) which is displayed on the site. It gets the title, author and body of the article, from the database. I use the ‘|’ symbol to filter out the tags.</p>
+
+	<h3>Articles.html</h3>
+        <p>Articles.html extend layout.html. This html file uses a list tag to list all the articles currently stored on the database. This is directly displayed on the application page ‘Forum’. The for-loop loops through all the articles and lists them.</p>
+
+	<h3>Dashboard.html</h3>
+        <p>Dashboard.html extends layout.html. It uses a table (table tag) with columns: ‘ID’, ‘Title’, ‘Author’, ‘Date’. The dashboard is only accessible once a user logs in/creates an account. A for loop is used again to find and list articles, however, only articles specific to that user. I also have an edit and delete button, which function, and will be explained after.</p>
+
+	<h3>Edit_Article.html</h3>
+        <p>Edit_article extends layout.html. This html file enables the user to edit an existing article they posted previously. It uses an extra html file from the ‘includes’ directory. It uses form tags with a ‘POST’ method to get an existing article and display it (the title and body of text of the article).</p>
+
+	<h3>Home.html</h3>
+        <p>Home.html extends layout.html. This html file contains the tags for the main page. It contains a conditional statement to maintain access control. This is so that no one can access the site through merely typing the URL in.</p>
+
+	<h3>Layout.html</h3>
+        <p>Layout.html is the main (base) html file. All other html files extend this one. In the head of this file, I have the title and link tags to bootstrap and my personal CSS file. The body then has the navigation bar, which is displayed on all the other pages. It also contains my footer which is seen on every page. The script tags are on the bottom, for bootstrap, this also allows the page to load faster. If I want a certain feature to be on all pages, I will just place that feature on this layout.html file.</p>
+
+	<h3>Login.html</h3>
+        <p>Login.html extends layout.html. It has a form tag which contains a ‘POST’ method. This html file is displayed when the user goes to the login page. It also has a button, to log in. It also takes into consideration access control, as it uses csrf tokens.</p>
+
+	<h3>Register.html</h3>
+        <p>Register.html extends layout.html. This file is displayed when the user clicks on the register page. It uses a form tag, which asks the user for name, email, username and password (with confirmation). It then has a submit button (input tag). This page is also secured with csrf tokens, which validates the forms.</p>
+
+	<h3>Scores.html</h3>
+        <p>Scores.html extends layout.html. It displays the latest scores and fixtures of every club in the premier league. It highlights Chelsea, due to the page being specifically about them. I have used an iframe in order to display the table of fixtures and results.</p>
+
+	<h3>Stadium.html</h3>
+        <p>Stadium.html extends layout.html. This page displays a search box and map for the user. When they enter a football team and enter, the map displays the stadium location on google maps. This also utilises iframes. The form uses csrf tokens for validations and expires when session done. It also uses a ‘POST’ method in the form.</p>
+
+	<br>
+	<br>
+
+	<h2>HTML Files (within includes)</h2>
+	<p>This section will talk about my more specific html files. They are contained within the folder ‘includes’. This section will explain the components of these html files.</p>
+
+	<h3>_Formhelpers.html</h3>
+        <p>This html file is used when we render forms. It utilises jinja templates, as well macros. Macros help to attain DRY (Don’t Repeat Yourself) principles, as well as modularising code. There is also a conditional which will throw an error message, if an error is found.</p>
+
+	<h3>_Messages.html</h3>
+        <p>This html file is used for the flash messages which appear throughout the application. They display alerts (messages to the user) in either a red (danger) box or green (success)  box. Conditionals are used throughout to ensure the right alert is used in the right situation.</p>
+
+	<h3>_Navbar.html</h3>
+        <p>This html file contains the code needed to display to navigation bar. It utilises bootstrap for the design. The login, register and dashboard options are separated from the other, general, pages pf the flask app. I have used a conditional to check if the session the user is currently using, is logged in. If they are, then display logout and dashboard, else, they are not signed in, so display the login and register options.</p>
+
+	<br>
+	<br>
+
+	<h2>CSS Files (within static)</h2>
+	<h3>Style.css</h3>
+        <p>This CSS file is stored in the static directory. I have used it to style specific and extra features on my application. For example, although I used bootstrap to design my navbar, I’ve overridden bootstrap CSS by adding my own class and providing the code/styling.</p>
+
+
+
+{% endblock %}
+
+
+
+

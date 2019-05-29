@@ -1,0 +1,33 @@
+<!-- HOME HTML PAGE WHICH MAKES USE OF JINJA TEMPLATES AND FORM CONTROL -->
+
+{% extends 'layout.html' %}
+
+<!-- EXTRACT 3 -->
+
+{% block body %}
+
+	<div class="jumbotron text-center" >
+ 		<div class="container">
+      			<h1 class="display-3">Welcome to Chelsea FC X Shakil</h1>
+      			<p>This is a fan website for getting the latest updates on everything Chelsea FC</p>
+
+			<!-- EXTRACT 4 -->
+			{% if session.logged_in == NULL %}
+				<a href="/register" class="btn btn-primary btn-lg homeButtons"><i class="fa fa-address-book"> Register</a>
+				<a href="/login" class="btn btn-primary btn-lg homeButtons"><i class="fa fa-sign-in"> Login</a>
+
+			{% endif %}
+    		</div>
+  	</div>
+
+	
+	<div class="container fOverlay">
+  		<img src="https://www.talkchelsea.net/wp-content/uploads/2017/12/champions-league-win-2012-1068x580.jpg" alt="Didier Drogba" class="image" style="width:100%">
+  		<div class="middle container">
+			<div class="text">Chelsea win the 2011/12 Champions League</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+

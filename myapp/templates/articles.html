@@ -1,0 +1,25 @@
+<!-- Articles HTML PAGE WHICH MAKES USE OF JINJA TEMPLATES -->
+
+{% extends 'layout.html' %}
+
+{% block body %}
+
+	<h1>Articles</h1>
+	<ul class="list-group">
+		{% for article in articles %}
+			<li class="list-group-item"><a href="article/{{ article.id }}">{{ article.title }}</a></li>
+		{% endfor %}
+	</ul>
+	
+	<!--
+        <div class="jumbotron">
+                <div class="container">
+                        <h1 class="display-3">Welcome to Goals 'R' Us</h1>
+                        <p>This is a website for getting the latest updates on football goals</p>
+                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Click for goals &raquo;</a></p>
+                </div>
+        </div>
+	-->
+
+{% endblock %}
+
